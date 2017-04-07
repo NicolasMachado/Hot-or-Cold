@@ -8,7 +8,7 @@ export default function GameBody(props) {
             	<input id="guess-submit" type="submit" value="Guess" />
             </form>
             <div id="number-attempts">
-            	You have guessed {props.numberAttempts} times
+            	Number of attempts: {props.numberAttempts}
             </div>
         </div>
     );
