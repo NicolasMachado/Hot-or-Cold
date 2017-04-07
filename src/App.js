@@ -9,7 +9,6 @@ export default class App extends React.Component {
         super(props);
         this.state = {
         	numberToGuess: Math.round(Math.random()*100),
-            lastGuess: null,
             guessHistory: [],
             numberAttempts: 0,
             message: 'Make your guess!',
@@ -72,7 +71,6 @@ export default class App extends React.Component {
         if (this.isValid(number, this)) {
             this.HotOrCold(number, this);
             this.setState({
-                lastGuess: e.target.guessinput.value,
                 guessHistory: this.state.guessHistory.concat([number]),
                 numberAttempts: this.state.numberAttempts + 1 
             });
@@ -82,7 +80,6 @@ export default class App extends React.Component {
     onReset() {
         this.setState({
             numberToGuess: Math.round(Math.random()*100),
-            lastGuess: null,
             guessHistory: [],
             numberAttempts: 0,
             message: 'Make your guess!',
