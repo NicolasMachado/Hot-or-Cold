@@ -70,6 +70,7 @@ nav {
 
 .game-header {
     padding: 10px;
+    background-color: #F1C076;
 }
 
 .game-body {
@@ -77,6 +78,8 @@ nav {
 
 .game-footer {
     padding: 10px;
+    min-height: 41px;
+    background-color: #F1C076;
 }
 
 .guess-history-single {
