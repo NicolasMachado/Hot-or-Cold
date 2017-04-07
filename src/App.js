@@ -54,7 +54,7 @@ export default class App extends React.Component {
         } else if (number > toGuess + 10 || number < toGuess - 10) {
             return component.setState({message: 'Warm'});
         } else if (number > toGuess + 5 || number < toGuess - 5) {
-            return component.setState({message: 'Very warm!'});
+            return component.setState({message: 'Very warm'});
         } else if (number > toGuess || number < toGuess) {
             return component.setState({message: 'Almost there!'});
         } else if (number === toGuess) {
