@@ -1,26 +1,15 @@
 import React from 'react';
 
-export default class GameContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            test: 2
-        };
-    }
+import GameHeader from './game-header';
+import GameBody from './game-body';
+import GameFooter from './game-footer';
 
-    render() {
-      return (
+export default function GameContainer(props) {
+    return (
         <div className="game-container">
-            <div className="game-header">
-                game header
-            </div>
-            <div className="game-body">
-                game body
-            </div>
-            <div className="game-footer">
-                game footer
-            </div>
+        <GameHeader message={props.options.message} />
+        <GameBody onSubmit={props.onGuessSubmit} numberAttempts={props.options.numberAttempts} />
+        <GameFooter guessHistory={props.options.guessHistory} />
         </div>
-      );
-    }
+    );
 }
