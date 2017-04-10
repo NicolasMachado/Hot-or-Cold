@@ -4,17 +4,18 @@ import './App.css';
 import Header from './components/header';
 import GameContainer from './components/game-container';
 
+const stateBase = {
+    numberToGuess: Math.round(Math.random()*100),
+    guessHistory: [],
+    numberAttempts: 0,
+    message: 'Make your guess!',
+    won: false
+};
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-        	numberToGuess: Math.round(Math.random()*100),
-            guessHistory: [],
-            numberAttempts: 0,
-            message: 'Make your guess!',
-            won: false
-        };
-
+        this.state = stateBase;
         this.onGuessSubmit = this.onGuessSubmit.bind(this);
         this.onReset = this.onReset.bind(this);
     }
@@ -26,7 +27,7 @@ export default class App extends React.Component {
         }
 
         if (!number) {
-            return false 
+            return false
         }
 
         if (number < 0 || number > 100) {
@@ -72,7 +73,7 @@ export default class App extends React.Component {
             this.HotOrCold(number, this);
             this.setState({
                 guessHistory: this.state.guessHistory.concat([number]),
-                numberAttempts: this.state.numberAttempts + 1 
+                numberAttempts: this.state.numberAttempts + 1
             });
         }
     }
@@ -98,3 +99,5 @@ export default class App extends React.Component {
     	);
     }
 }
+
+export {stateBase};

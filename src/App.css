@@ -114,7 +114,6 @@ nav {
     width: 50%;
 }
 
-
 /* Reset `button` and button-style `input` default styles */
 input[type="submit"],
 input[type="reset"],
@@ -130,10 +129,9 @@ button {
     padding: 0;
     -webkit-appearance: button; /* for input */
     -webkit-user-select: none; /* for button */
-       -moz-user-select: none;
-        -ms-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
-
 
 input[type="number"] {
     text-align: center;
