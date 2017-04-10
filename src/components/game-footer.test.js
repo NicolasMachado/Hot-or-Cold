@@ -9,19 +9,13 @@ describe('<GameFooter />', () => {
         shallow(<GameFooter guessHistory={[10, 20, 30]} />);
     });
 
-    it('Renders the form-guess initially', () => {
+    it('Renders the history with actual history', () => {
         const wrapper = shallow(<GameFooter guessHistory={[10, 20, 30]} />);
-        //expect(wrapper.find('.guess-history-single').text()).toEqual("30");
-        expect(wrapper.children()).to.have.length(3);
-    });
-/*
-    it('Renders the form-guess initially', () => {
-        const wrapper = shallow(<GameBody />);
-        expect(wrapper.hasClass('game-body')).toEqual(true);
+        expect(wrapper.find('.guess-history-single').length).toBe(3);
     });
 
-    it('Should set the counter div correctly', () => {
-        const wrapper = shallow(<GameBody numberAttempts="30" />);
-        expect(wrapper.find('.nb-attempts').text()).toEqual("30");
-    });*/
+    it('Renders the empty history', () => {
+        const wrapper = shallow(<GameFooter guessHistory={[]} />);
+        expect(wrapper.find('.guess-history-single').length).toBe(0);
+    });
 });
