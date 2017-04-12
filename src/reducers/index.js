@@ -16,7 +16,6 @@ export const appReducer = (state=initialState, action) => {
 
     if (action.type === GUESS_SUBMIT) {
         const checkValidity = isValid(action.guessed, state);
-
         if (checkValidity !== true) {
             return Object.assign({}, state, checkValidity);
         }
@@ -35,7 +34,7 @@ function isValid(number, state) {
     if (state.won) {
         return {message: 'Please start a new game'}
     }
-    if (!number) {
+    if (typeof(number) !== 'number') {
         return {message: 'Please enter a valid number'}
     }
     if (number < 0 || number > 100) {
