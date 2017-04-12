@@ -1,9 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {guessSubmit} from '../actions';
 
-export default function GameBody(props) {
+export function GameBody(props) {
+
+    function submitGuess (e) {
+        e.preventDefault();
+        props.dispatch(guessSubmit(e.target.guessinput.value));
+        e.target.guessinput.value = "";
+    };
+
     return (
         <div className="game-body">
-            <form onSubmit={props.onSubmit} id="form-guess">
+            <form onSubmit={e => submitGuess(e)} id="form-guess">
             	<input name="guessinput" id="guess-input" type="number" placeholder="Guess between 0 and 100" />
             	<input id="guess-submit" type="submit" value="Guess" />
             </form>
@@ -13,3 +22,6 @@ export default function GameBody(props) {
         </div>
     );
 }
+
+//e => props.dispatch(guessSubmit(e))
+export default connect()(GameBody);

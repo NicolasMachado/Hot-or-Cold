@@ -4,6 +4,7 @@ export const resetGame = () => ({
 });
 
 export const GUESS_SUBMIT = 'GUESS_SUBMIT';
-export const guessSubmit = () => ({
-    type: GUESS_SUBMIT
+export const guessSubmit = (guessed) => ({
+    type: GUESS_SUBMIT,
+    guessed: guessed
 });
