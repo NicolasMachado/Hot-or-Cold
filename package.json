@@ -5,11 +5,14 @@
   "proxy": "http://localhost:8080/",
   "devDependencies": {
     "enzyme": "^2.8.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "redux-devtools": "^3.3.2"
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0"
   },
   "homepage": "https://nicolasmachado.github.io/Hot-or-Cold/",
   "scripts": {

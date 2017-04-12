@@ -1,25 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './App.css';
 
 import Header from './components/header';
 import GameContainer from './components/game-container';
 
-const stateBase = {
-    numberToGuess: Math.round(Math.random()*100),
-    guessHistory: [],
-    numberAttempts: 0,
-    message: 'Make your guess!',
-    won: false
-};
-
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = stateBase;
-        this.onGuessSubmit = this.onGuessSubmit.bind(this);
-        this.onReset = this.onReset.bind(this);
-    }
-
+export class App extends React.Component {
+/*
     isValid(number, component) {
         if (component.state.won) {
             component.setState({message: 'Please start a new game'});
@@ -77,27 +64,33 @@ export default class App extends React.Component {
             });
         }
     }
-
-    onReset() {
-        this.setState({
-            numberToGuess: Math.round(Math.random()*100),
-            guessHistory: [],
-            numberAttempts: 0,
-            message: 'Make your guess!',
-            won: false
-        });
-    }
-
+        <GameContainer onGuessSubmit={this.onGuessSubmit} options={this.state}/>
+*/
     render() {
     	return (
     		<div className="App">
-	    		<Header onReset={this.onReset} />
+	    		<Header />
 	    		<div className="body-container">
-	    			<GameContainer onGuessSubmit={this.onGuessSubmit} options={this.state}/>
 	    		</div>
     		</div>
     	);
     }
 }
 
-export {stateBase};
+App.defaultProps = {
+    numberToGuess: Math.round(Math.random()*100),
+    guessHistory: [],
+    numberAttempts: 0,
+    message: 'Make your BLEH guess!',
+    won: false
+};
+
+export const mapStateToProps = state => ({
+    numberToGuess: state.numberToGuess,
+    guessHistory: state.guessHistory,
+    numberAttempts: state.numberAttempts,
+    message: state.message,
+    won: state.won
+});
+
+export default connect(mapStateToProps)(App);
