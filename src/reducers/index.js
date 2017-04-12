@@ -15,15 +15,17 @@ export const appReducer = (state=initialState, action) => {
     }
 
     if (action.type === GUESS_SUBMIT) {
-        const number = action.guessed;
-        const checkValidity = isValid(number, state);
+        const checkValidity = isValid(action.guessed, state);
 
         if (checkValidity !== true) {
-            return Object.assign({}, state, Object.assign({}, state, checkValidity));
+            return Object.assign({}, state, checkValidity);
         }
-        const hotOrCold = HotOrCold(number, state);
-        console.log(hotOrCold);
-        return Object.assign({}, state, Object.assign({}, state, hotOrCold));
+        const hotOrCold = HotOrCold(action.guessed, state);
+        const history = {
+                guessHistory: [...state.guessHistory, action.guessed],
+                numberAttempts: state.numberAttempts + 1
+            };
+        return Object.assign({}, state, hotOrCold, history);
     }
 
     return state;
