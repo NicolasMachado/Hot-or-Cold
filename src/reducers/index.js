@@ -3,7 +3,7 @@ import {RESET_GAME, GUESS_SUBMIT} from '../actions';
 const initialState = {
     numberToGuess: Math.round(Math.random()*100),
     guessHistory: [],
-    numberAttempts: 0,
+    numberAttempts: 50,
     message: 'Make your guess!',
     won: false
 };

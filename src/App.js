@@ -64,13 +64,14 @@ export class App extends React.Component {
             });
         }
     }
-        <GameContainer onGuessSubmit={this.onGuessSubmit} options={this.state}/>
+
 */
     render() {
     	return (
     		<div className="App">
 	    		<Header />
 	    		<div className="body-container">
+                    <GameContainer game={this.props.game}/>
 	    		</div>
     		</div>
     	);
@@ -78,19 +79,17 @@ export class App extends React.Component {
 }
 
 App.defaultProps = {
-    numberToGuess: Math.round(Math.random()*100),
-    guessHistory: [],
-    numberAttempts: 0,
-    message: 'Make your BLEH guess!',
-    won: false
+    game: {
+        numberToGuess: Math.round(Math.random()*100),
+        guessHistory: [],
+        numberAttempts: 0,
+        message: 'Make your guess!',
+        won: false
+    }
 };
 
 export const mapStateToProps = state => ({
-    numberToGuess: state.numberToGuess,
-    guessHistory: state.guessHistory,
-    numberAttempts: state.numberAttempts,
-    message: state.message,
-    won: state.won
+    game: state
 });
 
 export default connect(mapStateToProps)(App);

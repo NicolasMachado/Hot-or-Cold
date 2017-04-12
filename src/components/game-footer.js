@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function GameFooter(props) {
 	const history = props.guessHistory.map((guess, index) => {
-		return <span className="guess-history-single" key={index}>
+		return (<span className="guess-history-single" key={index}>
                 {guess}
-            </span>
+            </span>)
 	});
     return (
     	<div className="game-footer">
