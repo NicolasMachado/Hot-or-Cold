@@ -9,11 +9,9 @@ const initialState = {
 };
 
 export const appReducer = (state=initialState, action) => {
-
     if (action.type === RESET_GAME) {
-        return Object.assign({}, state, Object.assign({}, initialState, {numberToGuess: Math.round(Math.random()*100)} ));
+        return Object.assign({}, initialState, {numberToGuess: Math.round(Math.random()*100)} );
     }
-
     if (action.type === GUESS_SUBMIT) {
         const checkValidity = isValid(action.guessed, state);
         if (checkValidity !== true) {
@@ -26,7 +24,6 @@ export const appReducer = (state=initialState, action) => {
             };
         return Object.assign({}, state, hotOrCold, history);
     }
-
     return state;
 };
 
@@ -45,7 +42,6 @@ function isValid(number, state) {
     }
     return true
 }
-
 
 function HotOrCold(number, state) {
     const toGuess = state.numberToGuess;

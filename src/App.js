@@ -6,22 +6,6 @@ import Header from './components/header';
 import GameContainer from './components/game-container';
 
 export class App extends React.Component {
-/*
-
-    onGuessSubmit(e) {
-        e.preventDefault();
-        const number = Number(e.target.guessinput.value);
-        e.target.guessinput.value = "";
-        if (this.isValid(number, this)) {
-            this.HotOrCold(number, this);
-            this.setState({
-                guessHistory: this.state.guessHistory.concat([number]),
-                numberAttempts: this.state.numberAttempts + 1
-            });
-        }
-    }
-
-*/
     render() {
     	return (
     		<div className="App">
