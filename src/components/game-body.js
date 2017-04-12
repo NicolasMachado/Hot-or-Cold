@@ -23,5 +23,4 @@ export function GameBody(props) {
     );
 }
 
-//e => props.dispatch(guessSubmit(e))
 export default connect()(GameBody);

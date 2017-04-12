@@ -7,28 +7,6 @@ import GameContainer from './components/game-container';
 
 export class App extends React.Component {
 /*
-    isValid(number, component) {
-        if (component.state.won) {
-            component.setState({message: 'Please start a new game'});
-            return false
-        }
-
-        if (!number) {
-            return false
-        }
-
-        if (number < 0 || number > 100) {
-            component.setState({message: 'The number must be comprised between 0 and 100!'});
-            return false
-        }
-
-        if (component.state.guessHistory.indexOf(number) > -1) {
-            component.setState({message: 'You have already guessed this number!'});
-            return false
-        }
-
-        return true
-    }
 
     HotOrCold(number, component) {
         const toGuess = component.state.numberToGuess;
