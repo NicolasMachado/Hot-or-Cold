@@ -9,6 +9,7 @@
     "redux-devtools": "^3.3.2"
   },
   "dependencies": {
+    "gh-pages": "^0.12.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.4",
@@ -16,6 +17,8 @@
   },
   "homepage": "https://nicolasmachado.github.io/Hot-or-Cold/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
