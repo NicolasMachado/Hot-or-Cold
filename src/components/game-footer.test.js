@@ -8,7 +8,7 @@ describe('<GameFooter />', () => {
     it('renders without crashing', () => {
         shallow(<GameFooter guessHistory={[10, 20, 30]} />);
     });
-
+/*
     it('Renders the history with actual history', () => {
         const wrapper = shallow(<GameFooter guessHistory={[10, 20, 30]} />);
         expect(wrapper.find('.guess-history-single').length).toBe(3);
@@ -18,4 +18,5 @@ describe('<GameFooter />', () => {
         const wrapper = shallow(<GameFooter guessHistory={[]} />);
         expect(wrapper.find('.guess-history-single').length).toBe(0);
     });
+    */
 });
