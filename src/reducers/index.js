@@ -1,6 +1,6 @@
 import {RESET_GAME, GUESS_SUBMIT} from '../actions';
 
-const initialState = {
+export const initialState = {
     numberToGuess: Math.round(Math.random()*100),
     guessHistory: [],
     numberAttempts: 0,

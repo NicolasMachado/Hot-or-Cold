@@ -9,7 +9,7 @@ export function GameContainer(props) {
     return (
         <div className="game-container">
             <GameHeader message={props.game.message} />
-            <GameBody onSubmit={props.onGuessSubmit} numberAttempts={props.game.numberAttempts} />
+            <GameBody numberAttempts={props.game.numberAttempts} />
             <GameFooter guessHistory={props.game.guessHistory} />
         </div>
     );
